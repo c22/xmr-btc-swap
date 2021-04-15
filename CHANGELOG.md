@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   This is a breaking change in the network layer and hence old versions are not compatible with this version.
   We advise to also not resume any swaps that have been created with an older version.
   It is recommended to reset / delete the database after upgrading.
+- An issue where the CLI would not reconnect to the ASB in case the network connection dropped.
+  We now attempt to re-establish the connection using an exponential backoff but will give up eventually after 5 minutes.
 
 ## [0.4.0] - 2021-04-06
 
